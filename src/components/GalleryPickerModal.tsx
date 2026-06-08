@@ -107,12 +107,12 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
                             )}
                             onClick={() => setSelectedFolder(null)}
                         >
-                            <h2 className="text-2xl font-bold leading-tight">Select from Gallery</h2>
+                            <h2 className="text-2xl font-semibold leading-tight">Select from Gallery</h2>
                         </div>
                         {selectedFolder && (
                             <>
                                 <ChevronRight className="w-5 h-5 text-gray-300" />
-                                <h2 className="text-2xl font-bold text-gray-900 leading-tight">{selectedFolder.name}</h2>
+                                <h2 className="text-2xl font-semibold text-gray-900 leading-tight">{selectedFolder.name}</h2>
                             </>
                         )}
                     </div>
@@ -153,7 +153,7 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
                     {isLoading ? (
                         <div className="h-full flex flex-col items-center justify-center text-gray-400 space-y-4">
                             <Loader2 className="w-10 h-10 animate-spin text-primary" />
-                            <p className="text-sm font-medium tracking-wide">Syncing with Archive...</p>
+                            <p className="text-sm font-medium ">Syncing with Archive...</p>
                         </div>
                     ) : !selectedFolder ? (
                         // Folder Selection
@@ -171,7 +171,7 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
                                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-primary/5 transition-colors">
                                             <Folder className="w-8 h-8 text-primary/40 group-hover:text-primary transition-colors" />
                                         </div>
-                                        <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors text-sm">{folder.name}</h3>
+                                        <h3 className="font-semibold text-gray-900 group-hover:text-primary transition-colors text-sm">{folder.name}</h3>
                                     </div>
                                 ))}
                             </div>
@@ -180,7 +180,7 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
                                 <div className="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mb-2">
                                     <Folder className="w-10 h-10 text-gray-200" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900">No folders found</h3>
+                                <h3 className="text-xl font-semibold text-gray-900">No folders found</h3>
                                 <p className="text-sm max-w-xs text-center">Try a different search term or check the admin gallery.</p>
                             </div>
                         )
@@ -253,7 +253,7 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
                                 <div className="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mb-2">
                                     <ImageIcon className="w-10 h-10 text-gray-200" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900">Folder is empty</h3>
+                                <h3 className="text-xl font-semibold text-gray-900">Folder is empty</h3>
                                 <p className="text-sm max-w-xs text-center">This folder doesn't contain any images yet.</p>
                             </div>
                         )
@@ -262,7 +262,7 @@ export default function GalleryPickerModal({ isOpen, onClose, onSelect }: Galler
 
                 {/* Footer Actions */}
                 <div className="px-8 py-6 border-t border-gray-100 bg-gray-50/50 flex items-center justify-between sticky bottom-0 z-10">
-                    <p className="text-sm font-bold text-gray-500 bg-white px-4 py-2 rounded-xl border border-gray-100 shadow-sm flex items-center gap-2">
+                    <p className="text-sm font-semibold text-gray-500 bg-white px-4 py-2 rounded-xl border border-gray-100 shadow-sm flex items-center gap-2">
                         <Check className="w-4 h-4 text-primary" />
                         {allSelectedImages.length} assets selected
                     </p>

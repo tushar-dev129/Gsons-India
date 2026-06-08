@@ -18,10 +18,10 @@ export default function NewsletterSection() {
 
                         <div className="relative z-10 max-w-2xl mx-auto space-y-8">
                             <div className="space-y-4">
-                                <span className="text-[10px]  tracking-[0.4em]  text-primary">
+                                <span className="text-[10px]    text-primary">
                                     Strategic Updates
                                 </span>
-                                <h2 className="text-4xl md:text-5xl  text-white leading-none font-display tracking-tighter">
+                                <h2 className="text-4xl md:text-5xl  text-white leading-none font-display ">
                                     Illuminating Your <span className="text-gradient">Inbox.</span>
                                 </h2>
                                 <p className="text-slate-400 text-[13px] font-medium leading-relaxed">
@@ -42,14 +42,14 @@ export default function NewsletterSection() {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full sm:w-auto bg-white text-slate-900 px-10 py-5 rounded-2xl  text-xs  tracking-widest hover:bg-primary hover:text-white transition-all duration-500 shadow-luxe group/btn active:scale-95 flex items-center justify-center gap-3"
+                                    className="w-full sm:w-auto bg-white text-slate-900 px-10 py-5 rounded-2xl  text-xs   hover:bg-primary hover:text-white transition-all duration-500 shadow-luxe group/btn active:scale-95 flex items-center justify-center gap-3"
                                 >
                                     Subscribe
                                     <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                                 </button>
                             </form>
 
-                            <p className="text-slate-500 text-[10px]   tracking-[0.2em]">
+                            <p className="text-slate-500 text-[10px]   ">
                                 curated frequency • absolute privacy
                             </p>
                         </div>

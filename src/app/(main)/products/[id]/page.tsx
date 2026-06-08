@@ -10,6 +10,7 @@ import { cn } from '@/utils/cn';
 import type { Product, Variant } from '@/types/product';
 import { useSaved } from '@/context/SavedContext';
 import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
 
 export default function ProductDetailPage() {
     const params = useParams();
@@ -20,6 +21,7 @@ export default function ProductDetailPage() {
     const [mainImage, setMainImage] = useState<string>('');
     const { toggleSave, isSaved } = useSaved();
     const { isAuthenticated } = useAuth();
+    const { addItem } = useCart();
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const isVideo = (url: string) => {
@@ -62,7 +64,7 @@ export default function ProductDetailPage() {
         <div className="min-h-screen flex items-center justify-center bg-[#FAFAFA]">
             <div className="flex flex-col items-center gap-6">
                 <div className="w-16 h-16 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                <p className="text-[10px]  text-slate-400  tracking-[0.4em]">Establishing Connection</p>
+                <p className="text-[10px]  text-slate-400  ">Establishing Connection</p>
             </div>
         </div>
     );
@@ -73,12 +75,12 @@ export default function ProductDetailPage() {
                 <Info className="w-12 h-12 text-slate-200" />
             </div>
             <div className="space-y-4 mb-12">
-                <h1 className="text-4xl md:text-5xl  text-slate-900 tracking-tight">Technical Disconnect</h1>
+                <h1 className="text-4xl md:text-5xl  text-slate-900 ">Technical Disconnect</h1>
                 <p className="text-slate-500 max-w-sm mx-auto font-medium leading-relaxed">The requested specification has been moved or is currently unavailable in our archives.</p>
             </div>
             <button
                 onClick={() => router.push('/products')}
-                className="bg-primary text-white px-12 py-5 rounded-2xl font-bold text-xs  tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95"
+                className="bg-primary text-white px-12 py-5 rounded-2xl font-semibold text-xs   hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95"
             >
                 Return to Gallery
             </button>
@@ -89,6 +91,25 @@ export default function ProductDetailPage() {
     const currentSKU = selectedVariant?.sku ?? product.code;
     const currentImages = (selectedVariant?.images?.length ? selectedVariant.images : product.images) || [];
     const productVideo = currentImages.find(img => isVideo(img.url))?.url;
+    const currentImage = currentImages?.[0]?.url || mainImage || "/logo.png";
+    const handleAddToCart = () => {
+        if (!isAuthenticated) {
+            router.push("/auth/login");
+            return;
+        }
+        addItem({
+            id: selectedVariant?._id || product._id,
+            productId: product._id,
+            variantId: selectedVariant?._id,
+            name: product.name,
+            code: currentSKU || product.slug || product._id,
+            price: Number(currentPrice || 0),
+            image: currentImage,
+            attributes: selectedVariant?.attributes
+                ? Object.fromEntries(Object.entries(selectedVariant.attributes).map(([key, value]) => [key, String(value)]))
+                : undefined,
+        });
+    };
 
     return (
         <div className="bg-[#FAFAFA] min-h-screen pb-32">
@@ -103,10 +124,13 @@ export default function ProductDetailPage() {
                     </button>
 
                     <div className="flex items-center gap-6 lg:gap-10">
-                        <span className="text-xl font-bold text-slate-900 font-display tracking-tight">
+                        <span className="text-xl font-semibold text-slate-900 font-display ">
                             {formatPrice(currentPrice)}
                         </span>
-                        <button className="hidden sm:flex bg-primary text-white px-8 py-3 rounded-xl text-[12px]   tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95">
+                        <button
+                            onClick={handleAddToCart}
+                            className="hidden sm:flex bg-primary text-white px-8 py-3 rounded-xl text-[12px]    hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95"
+                        >
                             Add to Cart
                         </button>
                     </div>
@@ -174,22 +198,22 @@ export default function ProductDetailPage() {
                     <div className="space-y-16">
                         <div className="space-y-4">
                             <div className="flex items-center gap-6">
-                                <span className="px-5 py-2 bg-slate-100 text-slate-500 text-[10px]  font-bold  tracking-[0.25em] rounded-full border border-slate-200">
+                                <span className="px-5 py-2 bg-slate-100 text-slate-500 text-[10px]  font-semibold  tracking-[0.25em] rounded-full border border-slate-200">
                                     {typeof product.categoryId === 'object'
                                         ? product.categoryId.name
                                         : (typeof product.category === 'object' ? product.category.name : (product.category || 'Uncategorized'))}
                                 </span>
                                 {currentSKU && (
-                                    <span className="text-[14px]  text-slate-500 font-bold   border-l border-slate-200 pl-6">
+                                    <span className="text-[14px]  text-slate-500 font-semibold   border-l border-slate-200 pl-6">
                                         ID: {currentSKU}
                                     </span>
                                 )}
                             </div>
-                            <h1 className="text-4xl md:text-5xl  text-slate-800 leading-[1.1] tracking-tighter text-balance">
+                            <h1 className="text-4xl md:text-5xl  text-slate-800 leading-[1.1]  text-balance">
                                 {product.name}
                             </h1>
                             <div className="flex items-baseline gap-5">
-                                <span className="text-3xl font-bold text-primary tracking-tight">{formatPrice(currentPrice)}</span>
+                                <span className="text-3xl font-semibold text-primary ">{formatPrice(currentPrice)}</span>
                                 {currentPrice > 0 && (
                                     <span className="text-md text-red-400 line-through italic">
                                         {formatPrice(currentPrice * 1.15)}
@@ -202,15 +226,15 @@ export default function ProductDetailPage() {
                         {product.variants && product.variants.length > 0 && (
                             <div className=" space-y-4">
                                 <div className="flex flex-col gap-3">
-                                    <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Select Configuration</h3>
+                                    <h3 className="text-[10px] font-semibold   text-slate-400">Select Configuration</h3>
                                     {selectedVariant && (
                                         <div className="flex items-center gap-3">
                                             <div className="h-8 flex items-center px-4 bg-white border border-primary/20 rounded-xl shadow-sm">
-                                                <span className="text-[11px] font-bold text-primary uppercase tracking-widest">
+                                                <span className="text-[11px] font-semibold text-primary  ">
                                                     {Object.values(selectedVariant.attributes || {}).join(' | ')}
                                                 </span>
                                             </div>
-                                            <span className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">
+                                            <span className="text-[10px] text-slate-400 font-semibold  ">
                                                 SKU: {selectedVariant.sku}
                                             </span>
                                         </div>
@@ -283,8 +307,8 @@ export default function ProductDetailPage() {
 
                             <div className="bg-white rounded-4xl border border-slate-100 shadow-xl shadow-slate-200/20 overflow-hidden">
                                 <div className="p-6 border-b border-slate-50 flex items-center justify-between">
-                                    <h3 className="text-[17px]   tracking-[0.3em] text-slate-900 font-display">Product Data</h3>
-                                    <span className="text-[8px]   tracking-widest text-primary px-3 py-1 bg-primary/5 rounded-full">Verified Specification</span>
+                                    <h3 className="text-[17px]    text-slate-900 font-display">Product Data</h3>
+                                    <span className="text-[8px]    text-primary px-3 py-1 bg-primary/5 rounded-full">Verified Specification</span>
                                 </div>
 
                                 <div className="grid grid-cols-2 md:grid-cols-3">
@@ -297,7 +321,7 @@ export default function ProductDetailPage() {
                                         { label: "Rendering", value: "CRI >90 (True)" }
                                     ].map((spec, i) => (
                                         <div key={i} className="p-6 border-r border-b border-slate-50 last:border-r-0 group hover:bg-slate-50 transition-colors">
-                                            <span className="block text-[12px] font-bold  text-slate-700  tracking-[0.15em]  group-hover:text-primary transition-colors">
+                                            <span className="block text-[12px] font-semibold  text-slate-700  tracking-[0.15em]  group-hover:text-primary transition-colors">
                                                 {spec.label}
                                             </span>
                                             <span className="text-xs font-normal text-slate-400">{spec.value}</span>
@@ -308,7 +332,10 @@ export default function ProductDetailPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-6 pt-12 border-t border-slate-100">
-                            <button className="flex-2 bg-primary text-white py-4 rounded-3xl    text-lg font-semibold shadow-2xl shadow-primary/30 transition-all duration-500 hover:bg-primary/90 hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-4 group">
+                            <button
+                                onClick={handleAddToCart}
+                                className="flex-2 bg-primary text-white py-4 rounded-3xl    text-lg font-semibold shadow-2xl shadow-primary/30 transition-all duration-500 hover:bg-primary/90 hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-4 group"
+                            >
                                 <ShoppingCart className="w-5 h-5 transition-transform group-hover:scale-110" />
                                 Add to Cart
                             </button>
@@ -333,8 +360,8 @@ export default function ProductDetailPage() {
             {productVideo && (
                 <div className="w-full flex flex-col items-center py-24 lg:py-32 bg-white/40 border-y border-slate-100 mt-20">
                     <div className="container-custom mb-12 text-center">
-                        <span className="text-[10px] font-bold text-primary uppercase tracking-[0.4em] mb-4 block">Product Showcase</span>
-                        <h2 className="text-3xl lg:text-4xl font-display text-slate-900 tracking-tight">Experience in Motion</h2>
+                        <span className="text-[10px] font-semibold text-primary   mb-4 block">Product Showcase</span>
+                        <h2 className="text-3xl lg:text-4xl font-display text-slate-900 ">Experience in Motion</h2>
                     </div>
                     
                     <div 
@@ -366,7 +393,7 @@ export default function ProductDetailPage() {
                         <div className="absolute bottom-12 left-12 right-12 flex items-center justify-between pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20">
                                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                                <span className="text-[10px] font-bold text-white uppercase tracking-widest">Live Dynamic View</span>
+                                <span className="text-[10px] font-semibold text-white  ">Live Dynamic View</span>
                              </div>
                         </div>
                     </div>

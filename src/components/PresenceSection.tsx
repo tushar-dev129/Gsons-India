@@ -31,9 +31,9 @@ export default function PresenceSection() {
                             <div className="relative z-10">
                                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 border border-white/30 mb-4">
                                     <div className="w-1 h-1 rounded-full bg-white animate-pulse"></div>
-                                    <span className="text-[7px] tracking-[0.2em] text-white">Headquarters</span>
+                                    <span className="text-[7px]  text-white">Headquarters</span>
                                 </div>
-                                <h3 className="text-4xl mb-3 tracking-tighter font-display text-white">Batala, Punjab</h3>
+                                <h3 className="text-4xl mb-3  font-display text-white">Batala, Punjab</h3>
                                 <p className="text-white/80 text-[13px] leading-relaxed mb-6 font-medium">
                                     Epicenter of Gsons engineering. Tradition meets futuristic architectural design.
                                 </p>
@@ -46,8 +46,8 @@ export default function PresenceSection() {
                                         <MapPin className="w-4 h-4 stroke-current" />
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-[11px] font-bold text-white">Design Studio</span>
-                                        <span className="text-[7px] tracking-widest text-white/70">Innovation Center</span>
+                                        <span className="text-[11px] font-semibold text-white">Design Studio</span>
+                                        <span className="text-[7px]  text-white/70">Innovation Center</span>
                                     </div>
                                 </div>
                             </div>
@@ -70,8 +70,8 @@ export default function PresenceSection() {
                                     </div>
 
                                     <div>
-                                        <h4 className="text-lg  text-slate-900 font-display tracking-tight">{city.name}</h4>
-                                        <p className="text-[9px] text-slate-400 font-bold  tracking-widest">{city.description}</p>
+                                        <h4 className="text-lg  text-slate-900 font-display ">{city.name}</h4>
+                                        <p className="text-[9px] text-slate-400 font-semibold  ">{city.description}</p>
                                     </div>
                                 </div>
                                 <div className="mt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300">

@@ -44,7 +44,7 @@ export default function UsersPage() {
     return (
         <div className="space-y-8">
             <div>
-                <h1 className="text-3xl font-bold text-gray-900">User Management</h1>
+                <h1 className="text-3xl font-semibold text-gray-900">User Management</h1>
                 <p className="text-gray-500 mt-2">Manage registered customers and users.</p>
             </div>
 
@@ -70,7 +70,7 @@ export default function UsersPage() {
                     ) : (
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="bg-gray-50 text-gray-600 text-sm font-semibold  tracking-wider">
+                                <tr className="bg-gray-50 text-gray-600 text-sm font-semibold  ">
                                     <th className="px-6 py-4">User Details</th>
                                     <th className="px-6 py-4">Contact</th>
                                     <th className="px-6 py-4">Role</th>
@@ -82,7 +82,7 @@ export default function UsersPage() {
                                     <tr key={user._id} className="hover:bg-orange-50/30 transition-colors group">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg overflow-hidden">
+                                                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold text-lg overflow-hidden">
                                                     {user.avatar?.url ? (
                                                         <img src={user.avatar.url} alt={user.name} className="w-full h-full object-cover" />
                                                     ) : (
@@ -103,7 +103,7 @@ export default function UsersPage() {
                                         </td>
                                         <td className="px-6 py-4 capitalize font-medium text-gray-600">
                                             <span className={cn(
-                                                "px-3 py-1 rounded-full text-xs font-bold",
+                                                "px-3 py-1 rounded-full text-xs font-semibold",
                                                 user.role === "admin" ? "bg-red-100 text-red-600" : "bg-orange-100 text-orange-600"
                                             )}>
                                                 {user.role}

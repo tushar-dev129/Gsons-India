@@ -168,8 +168,8 @@ export default function EditVariantPage() {
                         <ArrowLeft className="w-6 h-6 text-gray-500" />
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Edit Variant</h1>
-                        <p className="text-gray-500 mt-1">Updating SKU: <span className="font-bold text-primary">{formData.sku}</span></p>
+                        <h1 className="text-3xl font-semibold text-gray-900">Edit Variant</h1>
+                        <p className="text-gray-500 mt-1">Updating SKU: <span className="font-semibold text-primary">{formData.sku}</span></p>
                     </div>
                 </div>
             </div>
@@ -178,7 +178,7 @@ export default function EditVariantPage() {
                 <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">SKU (Unique Code)</label>
+                            <label className="text-sm font-semibold text-gray-900">SKU (Unique Code)</label>
                             <input
                                 type="text"
                                 name="sku"
@@ -199,14 +199,14 @@ export default function EditVariantPage() {
                                     onChange={(e) => setFormData(prev => ({ ...prev, isActive: e.target.checked }))}
                                     className="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded"
                                 />
-                                <label htmlFor="isActive" className="text-sm font-bold text-gray-900 cursor-pointer">Active</label>
+                                <label htmlFor="isActive" className="text-sm font-semibold text-gray-900 cursor-pointer">Active</label>
                             </div>
                         </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Price (₹)</label>
+                            <label className="text-sm font-semibold text-gray-900">Price (₹)</label>
                             <input
                                 type="number"
                                 name="price"
@@ -218,7 +218,7 @@ export default function EditVariantPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Stock Status</label>
+                            <label className="text-sm font-semibold text-gray-900">Stock Status</label>
                             <input
                                 type="number"
                                 name="stock"
@@ -233,7 +233,7 @@ export default function EditVariantPage() {
 
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <label className="text-sm font-bold text-gray-900">Attributes (Color, Material, etc.)</label>
+                            <label className="text-sm font-semibold text-gray-900">Attributes (Color, Material, etc.)</label>
                             <Button
                                 variant="ghost"
                                 type="button"
@@ -274,7 +274,7 @@ export default function EditVariantPage() {
                     </div>
 
                     <div className="pt-4">
-                        <label className="text-sm font-bold text-gray-900 block mb-2">Variant Images</label>
+                        <label className="text-sm font-semibold text-gray-900 block mb-2">Variant Images</label>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-4">
                             {/* Existing Images */}
@@ -309,7 +309,7 @@ export default function EditVariantPage() {
                                     ) : (
                                         <img src={previewUrl} alt="preview" className="w-full h-full object-cover" />
                                     )}
-                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-bold rounded-md">NEW</div>
+                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-semibold rounded-md">NEW</div>
                                     <button
                                         type="button"
                                         onClick={(e) => { e.stopPropagation(); removeNewImage(i); }}
@@ -331,7 +331,7 @@ export default function EditVariantPage() {
                                     ) : (
                                         <img src={img.url} alt="Gallery" className="w-full h-full object-cover" />
                                     )}
-                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-bold rounded-md shadow-sm uppercase">Gallery</div>
+                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-semibold rounded-md shadow-sm ">Gallery</div>
                                     <button
                                         type="button"
                                         onClick={() => removeGalleryImage(img._id)}
@@ -355,12 +355,12 @@ export default function EditVariantPage() {
                                         accept="image/*,video/*"
                                     />
                                     <Upload className="w-6 h-6 text-gray-400 group-hover:text-primary mb-2" />
-                                    <span className="text-[10px] font-bold text-gray-400 group-hover:text-primary uppercase tracking-tight text-center">Upload Files</span>
+                                    <span className="text-[10px] font-semibold text-gray-400 group-hover:text-primary   text-center">Upload Files</span>
                                 </label>
                                 <button
                                     type="button"
                                     onClick={() => setIsGalleryModalOpen(true)}
-                                    className="flex items-center justify-center gap-2 py-2 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-bold text-gray-500 hover:bg-orange-50 hover:text-primary hover:border-primary/20 transition-all uppercase tracking-tight shadow-sm"
+                                    className="flex items-center justify-center gap-2 py-2 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-semibold text-gray-500 hover:bg-orange-50 hover:text-primary hover:border-primary/20 transition-all   shadow-sm"
                                 >
                                     <ImageIcon className="w-3.5 h-3.5" />
                                     Gallery

@@ -21,8 +21,8 @@ export default function SustainabilitySection() {
 
                             {/* Impact Badge */}
                             <div className="absolute bottom-10 left-10 right-10 p-8 glass-effect rounded-3xl border-white/30">
-                                <p className="text-black/90  text-xl font-bold mb-1  tracking-tighter">Carbon Conscious</p>
-                                <p className="text-black/70 text-[10px]   tracking-[0.2em]">100% Recyclable Frameworks</p>
+                                <p className="text-black/90  text-xl font-semibold mb-1  ">Carbon Conscious</p>
+                                <p className="text-black/70 text-[10px]   ">100% Recyclable Frameworks</p>
                             </div>
                         </div>
                     </div>
@@ -30,10 +30,10 @@ export default function SustainabilitySection() {
                     {/* Narrative Content */}
                     <div className="space-y-12">
                         <div className="space-y-6">
-                            <span className="text-[10px]  tracking-[0.3em]  text-primary">
+                            <span className="text-[10px]    text-primary">
                                 Our Architectural Ethos
                             </span>
-                            <h2 className="text-4xl md:text-5xl  text-slate-900 leading-none font-display tracking-tighter">
+                            <h2 className="text-4xl md:text-5xl  text-slate-900 leading-none font-display ">
                                 Harmony In <br />
                                 <span className="text-gradient">Luminescence.</span>
                             </h2>
@@ -53,8 +53,8 @@ export default function SustainabilitySection() {
                                         <item.icon className="w-5 h-5 text-primary" />
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="text-sm  text-slate-900  tracking-widest">{item.title}</h4>
-                                        <p className="text-xs text-slate-400 font-bold">{item.desc}</p>
+                                        <h4 className="text-sm  text-slate-900  ">{item.title}</h4>
+                                        <p className="text-xs text-slate-400 font-semibold">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -62,7 +62,7 @@ export default function SustainabilitySection() {
 
                         <Link
                             href="/about"
-                            className="inline-flex items-center justify-center px-12 py-5 bg-slate-900 text-white text-xs   tracking-widest rounded-2xl hover:bg-primary transition-all shadow-luxe-lg hover:-translate-y-1 active:scale-95"
+                            className="inline-flex items-center justify-center px-12 py-5 bg-slate-900 text-white text-xs    rounded-2xl hover:bg-primary transition-all shadow-luxe-lg hover:-translate-y-1 active:scale-95"
                         >
                             Explore Our Story
                         </Link>

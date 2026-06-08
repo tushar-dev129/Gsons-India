@@ -123,7 +123,7 @@ export default function CategoriesPage() {
     return (
         <div className="space-y-8">
             <div>
-                <h1 className="text-3xl font-bold text-gray-900">Category Management</h1>
+                <h1 className="text-3xl font-semibold text-gray-900">Category Management</h1>
                 <p className="text-gray-700 mt-2">Create and organize product categories.</p>
             </div>
 
@@ -131,7 +131,7 @@ export default function CategoriesPage() {
                 {/* Left: Add Category Form */}
                 <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm h-fit">
                     <div className="flex items-center justify-between mb-6">
-                        <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                        <h3 className="font-semibold text-gray-900 flex items-center gap-2">
                             {editId ? <Edit2 className="w-5 h-5 text-primary" /> : <Plus className="w-5 h-5 text-primary" />}
                             {editId ? "Edit Category" : "Add New Category"}
                         </h3>
@@ -149,7 +149,7 @@ export default function CategoriesPage() {
                     </div>
                     <form onSubmit={handleAddCategory} className="space-y-4">
                         <div>
-                            <label className="text-sm font-bold text-gray-900 block mb-2">Category Name</label>
+                            <label className="text-sm font-semibold text-gray-900 block mb-2">Category Name</label>
                             <input
                                 type="text"
                                 value={name}
@@ -161,7 +161,7 @@ export default function CategoriesPage() {
                         </div>
 
                         <div>
-                            <label className="text-sm font-bold text-gray-900 block mb-2">Slug</label>
+                            <label className="text-sm font-semibold text-gray-900 block mb-2">Slug</label>
                             <input
                                 type="text"
                                 value={slug}
@@ -173,7 +173,7 @@ export default function CategoriesPage() {
                         </div>
 
                         <div>
-                            <label className="text-sm font-bold text-gray-900 block mb-2">Description</label>
+                            <label className="text-sm font-semibold text-gray-900 block mb-2">Description</label>
                             <textarea
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
@@ -184,7 +184,7 @@ export default function CategoriesPage() {
                         </div>
 
                         <div>
-                            <label className="text-sm font-bold text-gray-900 block mb-2">Category Image</label>
+                            <label className="text-sm font-semibold text-gray-900 block mb-2">Category Image</label>
                             <div
                                 onClick={() => fileInputRef.current?.click()}
                                 className="border-2 border-dashed border-gray-200 rounded-xl p-4 text-center hover:border-primary transition-colors cursor-pointer"
@@ -218,7 +218,7 @@ export default function CategoriesPage() {
                                 onChange={(e) => setIsActive(e.target.checked)}
                                 className="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded"
                             />
-                            <label htmlFor="isActive" className="text-sm font-bold text-gray-900 cursor-pointer">Active</label>
+                            <label htmlFor="isActive" className="text-sm font-semibold text-gray-900 cursor-pointer">Active</label>
                         </div>
 
                         <Button
@@ -261,14 +261,14 @@ export default function CategoriesPage() {
                                                 {cat.image?.url ? (
                                                     <img src={cat.image.url || '/logo.png'} alt={cat.name} className="w-full h-full object-cover" />
                                                 ) : (
-                                                    <div className="w-full h-full flex items-center justify-center text-primary font-bold">
+                                                    <div className="w-full h-full flex items-center justify-center text-primary font-semibold">
                                                         {cat.name.charAt(0).toUpperCase()}
                                                     </div>
                                                 )}
                                             </div>
                                             <div>
                                                 <div className="flex items-center gap-2">
-                                                    <h4 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{cat.name}</h4>
+                                                    <h4 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">{cat.name}</h4>
                                                     {!cat.isActive && <XCircle className="w-4 h-4 text-red-500" />}
                                                 </div>
                                                 <p className="text-xs text-gray-500 font-mono">{cat.slug}</p>

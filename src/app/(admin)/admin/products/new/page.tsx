@@ -142,7 +142,7 @@ export default function NewProductPage() {
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900">Add New Product</h1>
+                    <h1 className="text-3xl font-semibold text-gray-900">Add New Product</h1>
                     <p className="text-gray-500 mt-2">Create a new base product entry with images and details.</p>
                 </div>
                 <button
@@ -157,7 +157,7 @@ export default function NewProductPage() {
                 <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-8">
                     {/* Images Section */}
                     <div className="space-y-4">
-                        <label className="text-sm font-bold text-gray-900 ml-1">Product Images</label>
+                        <label className="text-sm font-semibold text-gray-900 ml-1">Product Images</label>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                             {imagePreviews.map((preview, index) => (
                                 <div key={index} className="relative aspect-square group rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
@@ -186,7 +186,7 @@ export default function NewProductPage() {
                                     ) : (
                                         <img src={img.url} alt="Gallery" className="w-full h-full object-cover" />
                                     )}
-                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-bold rounded-md shadow-sm">GALLERY</div>
+                                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-semibold rounded-md shadow-sm">GALLERY</div>
                                     <button
                                         type="button"
                                         onClick={() => removeGalleryImage(img._id)}
@@ -202,12 +202,12 @@ export default function NewProductPage() {
                                 <label className="flex-1 min-h-[160px] flex flex-col items-center justify-center border-2 border-dashed border-gray-200 rounded-2xl cursor-pointer hover:border-primary hover:bg-orange-50/30 transition-all group p-4">
                                     <input type="file" multiple className="hidden" onChange={handleImageChange} accept="image/*,video/*" />
                                     <Upload className="w-6 h-6 text-gray-400 group-hover:text-primary mb-2" />
-                                    <span className="text-[10px] font-bold text-gray-400 group-hover:text-primary uppercase tracking-tight">Upload</span>
+                                    <span className="text-[10px] font-semibold text-gray-400 group-hover:text-primary  ">Upload</span>
                                 </label>
                                 <button
                                     type="button"
                                     onClick={() => setIsGalleryModalOpen(true)}
-                                    className="flex items-center justify-center gap-2 py-2 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-bold text-gray-500 hover:bg-orange-50 hover:text-primary hover:border-primary/20 transition-all uppercase tracking-tight"
+                                    className="flex items-center justify-center gap-2 py-2 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-semibold text-gray-500 hover:bg-orange-50 hover:text-primary hover:border-primary/20 transition-all  "
                                 >
                                     <ImageIcon className="w-3.5 h-3.5" />
                                     Gallery
@@ -218,7 +218,7 @@ export default function NewProductPage() {
 
                     <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-gray-50">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Product Name</label>
+                            <label className="text-sm font-semibold text-gray-900">Product Name</label>
                             <input
                                 type="text"
                                 name="name"
@@ -230,7 +230,7 @@ export default function NewProductPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Product Slug</label>
+                            <label className="text-sm font-semibold text-gray-900">Product Slug</label>
                             <input
                                 type="text"
                                 name="slug"
@@ -245,7 +245,7 @@ export default function NewProductPage() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Category</label>
+                            <label className="text-sm font-semibold text-gray-900">Category</label>
                             <select
                                 name="categoryId"
                                 value={formData.categoryId}
@@ -271,13 +271,13 @@ export default function NewProductPage() {
                                     onChange={(e) => setFormData(prev => ({ ...prev, isActive: e.target.checked }))}
                                     className="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded"
                                 />
-                                <label htmlFor="isActive" className="text-sm font-bold text-gray-900 cursor-pointer">Active</label>
+                                <label htmlFor="isActive" className="text-sm font-semibold text-gray-900 cursor-pointer">Active</label>
                             </div>
                         </div>
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-gray-900">Description</label>
+                        <label className="text-sm font-semibold text-gray-900">Description</label>
                         <textarea
                             name="description"
                             value={formData.description}

@@ -12,8 +12,8 @@ export default function Hero() {
                     {/* Left: Text Content */}
                     <div className="space-y-8 animate-in fade-in slide-in-from-left duration-700">
                         <div className="space-y-4">
-                            <p className="text-primary font-bold  tracking-[0.2em] text-[11px]">Professional Series 2024</p>
-                            <h1 className="text-4xl md:text-5xl  text-slate-800 leading-[1.1] tracking-tight">
+                            <p className="text-primary font-semibold   text-[11px]">Professional Series 2024</p>
+                            <h1 className="text-4xl md:text-5xl  text-slate-800 leading-[1.1] ">
                                 Unique & <br />
                                 <span className="text-slate-900">Stylish Lighting</span>
                             </h1>
@@ -26,7 +26,7 @@ export default function Hero() {
                         <div className="pt-4">
                             <Link
                                 href="/products"
-                                className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold  tracking-widest text-white bg-primary rounded-xl shadow-xl shadow-primary/20 transition-all hover:bg-primary/90 hover:-translate-y-1 active:scale-95"
+                                className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-semibold   text-white bg-primary rounded-xl shadow-xl shadow-primary/20 transition-all hover:bg-primary/90 hover:-translate-y-1 active:scale-95"
                             >
                                 Shop Now
                                 <ArrowRight className="w-3.5 h-3.5 ml-3" />

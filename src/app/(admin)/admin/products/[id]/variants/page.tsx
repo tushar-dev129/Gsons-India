@@ -60,8 +60,8 @@ export default function ProductVariantsPage() {
                 <div className="flex  flex-1 items-center gap-4">
                     
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Manage Variants</h1>
-                        <p className="text-gray-500 mt-1">Product: <span className="text-primary font-bold">{product?.name}</span></p>
+                        <h1 className="text-3xl font-semibold text-gray-900">Manage Variants</h1>
+                        <p className="text-gray-500 mt-1">Product: <span className="text-primary font-semibold">{product?.name}</span></p>
                     </div>
                 </div>
                 <Button
@@ -98,7 +98,7 @@ export default function ProductVariantsPage() {
                     {filteredVariants.length > 0 ? (
                         <table className="w-full text-left border-collapse">
                             <thead className="sticky top-0 z-10">
-                                <tr className="bg-gray-50/80 backdrop-blur-md text-gray-900 text-xs   tracking-[0.2em] border-b border-gray-100">
+                                <tr className="bg-gray-50/80 backdrop-blur-md text-gray-900 text-xs    border-b border-gray-100">
                                     <th className="px-6 py-5">Image</th>
                                     <th className="px-6 py-5">SKU</th>
                                     <th className="px-6 py-5">Price</th>
@@ -127,7 +127,7 @@ export default function ProductVariantsPage() {
                                             </div>
                                         </td>
                                         <td className="px-6 py-5">
-                                            <code className="text-[11px] bg-gray-50 text-gray-900 px-2 py-1 rounded-md border border-gray-100 font-mono font-bold">
+                                            <code className="text-[11px] bg-gray-50 text-gray-900 px-2 py-1 rounded-md border border-gray-100 font-mono font-semibold">
                                                 {variant.sku}
                                             </code>
                                         </td>
@@ -137,7 +137,7 @@ export default function ProductVariantsPage() {
                                         <td className="px-6 py-5">
                                             <div className="flex flex-col gap-1">
                                                 <span className={cn(
-                                                    "text-xs   tracking-wider",
+                                                    "text-xs   ",
                                                     variant.stock < 10 ? 'text-red-600' : 'text-green-600'
                                                 )}>
                                                     {variant.stock} units
@@ -154,14 +154,14 @@ export default function ProductVariantsPage() {
                                                 {variant.attributes && Object.entries(variant.attributes).map(([key, val]: [string, any]) => (
                                                     <div key={key} className="flex items-center bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
                                                         <span className="text-[9px]  text-gray-400  mr-1">{key}:</span>
-                                                        <span className="text-[10px] font-bold text-gray-700">{val}</span>
+                                                        <span className="text-[10px] font-semibold text-gray-700">{val}</span>
                                                     </div>
                                                 ))}
                                             </div>
                                         </td>
                                         <td className="px-6 py-5">
                                             <span className={cn(
-                                                "inline-flex items-center px-3 py-1 text-[10px]  rounded-full  tracking-widest border shadow-sm",
+                                                "inline-flex items-center px-3 py-1 text-[10px]  rounded-full   border shadow-sm",
                                                 variant.isActive
                                                     ? 'bg-green-50 text-green-700 border-green-100'
                                                     : 'bg-red-50 text-red-700 border-red-100'

@@ -113,9 +113,9 @@ function ProductsContent() {
             <div className="container-custom">
                 {/* Page Navigation & Context */}
                 <div className="mb-8 md:mb-12 font-display">
-                    <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] text-slate-400 uppercase mb-4 md:mb-6">
+                    <div className="flex items-center gap-2 text-[12px] font-semibold text-slate-400  mb-4 md:mb-6">
                         <span>Collection</span>
-                        <ChevronRight className="w-3 h-3" />
+                        <ChevronRight className="w-3 h-3 " />
                         <span className="text-primary">{activeCategoryName || "All Archives"}</span>
                     </div>
 
@@ -137,10 +137,10 @@ function ProductsContent() {
                                 className="relative z-20 flex items-center justify-center md:justify-between w-fit p-3 md:p-0 md:min-w-[180px] md:pl-[68px] md:pr-4 md:py-3.5 bg-white border border-slate-100 rounded-2xl shadow-luxe transition-all hover:border-primary/20 md:border-l-4 md:border-l-primary"
                             >
                                 <div className="hidden md:flex absolute left-0 top-0 bottom-0 flex-col justify-center px-4 pointer-events-none border-r border-slate-50">
-                                    <span className="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Sort By</span>
+                                    <span className="text-[9px]   text-slate-400 font-semibold">Sort By</span>
                                 </div>
                                 
-                                <span className="hidden md:inline-block text-[11px] font-bold tracking-widest text-slate-900 truncate ml-2">
+                                <span className="hidden md:inline-block text-[11px] font-semibold  text-slate-900 truncate ml-2">
                                     {getSortLabel(sort)}
                                 </span>
                                 <Filter className="w-5 h-5 text-slate-600 md:hidden" />
@@ -159,7 +159,7 @@ function ProductsContent() {
                                                 key={cat.id}
                                                 onClick={() => handleSortChange(cat.id)}
                                                 className={cn(
-                                                    "w-full text-left px-5 py-3 flex items-center justify-between text-[11px] font-bold tracking-widest transition-colors",
+                                                    "w-full text-left px-5 py-3 flex items-center justify-between text-[11px] font-semibold  transition-colors",
                                                     isActive ? "text-primary bg-primary/5" : "text-slate-600 hover:bg-slate-50"
                                                 )}
                                             >
@@ -208,7 +208,7 @@ function ProductsContent() {
                                 <h3 className="text-3xl text-slate-900 mb-4 font-display tracking-tight">Visions Not Found</h3>
                                 <p className="text-slate-500 mb-10 max-w-xs mx-auto font-medium">We couldn't find any pieces matching your current filters. Try adjusting your parameters.</p>
                                 <button onClick={handleClear}
-                                    className="px-10 py-4 bg-slate-900 text-white rounded-2xl text-xs tracking-widest hover:bg-primary transition-all shadow-luxe-lg active:scale-95">
+                                    className="px-10 py-4 bg-slate-900 text-white rounded-2xl text-xs  hover:bg-primary transition-all shadow-luxe-lg active:scale-95">
                                     Reset Discovery
                                 </button>
                             </div>

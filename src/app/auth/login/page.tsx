@@ -33,7 +33,7 @@ export default function LoginPage() {
                             <circle cx="50" cy="50" r="10" fill="white" />
                         </svg>
                     </div>
-                    <h2 className="text-4xl font-bold mb-6 relative z-10">Welcome Back!</h2>
+                    <h2 className="text-4xl font-semibold mb-6 relative z-10">Welcome Back!</h2>
                     <p className="text-orange-100 mb-8 relative z-10">
                         Illuminate your space with our premium lighting solutions. Login to manage your orders and preferences.
                     </p>
@@ -50,7 +50,7 @@ export default function LoginPage() {
                 {/* Right Side: Form */}
                 <div className="md:w-1/2 p-12">
                     <div className="text-center mb-10">
-                        <h1 className="text-3xl font-bold text-gray-900">Sign In</h1>
+                        <h1 className="text-3xl font-semibold text-gray-900">Sign In</h1>
                         <p className="text-gray-500 mt-2">Access your GSONS account</p>
                     </div>
 
@@ -96,7 +96,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:transform-none"
+                            className="w-full py-4 bg-primary text-white font-semibold rounded-xl shadow-lg hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:transform-none"
                         >
                             {loading ? "Signing In..." : "Sign In"}
                         </button>
@@ -104,7 +104,7 @@ export default function LoginPage() {
 
                     <p className="text-center mt-8 text-gray-600">
                         Don't have an account?{" "}
-                        <Link href="/auth/register" className="font-bold text-primary hover:underline">
+                        <Link href="/auth/register" className="font-semibold text-primary hover:underline">
                             Register Now
                         </Link>
                     </p>

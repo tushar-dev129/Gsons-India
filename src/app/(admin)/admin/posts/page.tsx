@@ -49,7 +49,7 @@ export default function PostsPage() {
         <div className="space-y-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900">Posts Management</h1>
+                    <h1 className="text-3xl font-semibold text-gray-900">Posts Management</h1>
                     <p className="text-gray-500 mt-2">Create and manage blog posts and articles.</p>
                 </div>
                 <Button
@@ -84,7 +84,7 @@ export default function PostsPage() {
                     ) : filteredPosts.length > 0 ? (
                         <table className="w-full text-left border-collapse">
                             <thead className="sticky top-0 z-10">
-                                <tr className="bg-gray-50/80 backdrop-blur-md text-gray-900 text-xs   tracking-[0.2em] border-b border-gray-100">
+                                <tr className="bg-gray-50/80 backdrop-blur-md text-gray-900 text-xs    border-b border-gray-100">
                                     <th className="px-6 py-5">Post Title</th>
                                     <th className="px-6 py-5">Category</th>
                                     <th className="px-6 py-5">Status</th>
@@ -114,11 +114,11 @@ export default function PostsPage() {
                                                 <div className="min-w-0 flex-1 py-1">
                                                     <div
                                                         onClick={() => router.push(`/admin/posts/edit/${post._id}`)}
-                                                        className="font-bold text-gray-900 group-hover:text-primary transition-colors cursor-pointer line-clamp-1 mb-1"
+                                                        className="font-semibold text-gray-900 group-hover:text-primary transition-colors cursor-pointer line-clamp-1 mb-1"
                                                     >
                                                         {post.title}
                                                     </div>
-                                                    <div className="flex items-center gap-3 text-[10px] font-bold  tracking-wider text-gray-400">
+                                                    <div className="flex items-center gap-3 text-[10px] font-semibold   text-gray-400">
                                                         <span className="flex items-center gap-1 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
                                                             <User className="w-2.5 h-2.5" />
                                                             {post.user?.name || "Admin"}
@@ -132,13 +132,13 @@ export default function PostsPage() {
                                             </div>
                                         </td>
                                         <td className="px-6 py-5">
-                                            <div className="inline-flex items-center px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-100 text-[11px]  text-gray-600  tracking-wider">
+                                            <div className="inline-flex items-center px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-100 text-[11px]  text-gray-600  ">
                                                 {post.category}
                                             </div>
                                         </td>
                                         <td className="px-6 py-5">
                                             <span className={cn(
-                                                "inline-flex items-center px-3 py-1 text-[10px]  rounded-full  tracking-widest border shadow-sm",
+                                                "inline-flex items-center px-3 py-1 text-[10px]  rounded-full   border shadow-sm",
                                                 post.status === 'Published'
                                                     ? 'bg-green-50 text-green-700 border-green-100'
                                                     : 'bg-orange-50 text-orange-700 border-orange-100'

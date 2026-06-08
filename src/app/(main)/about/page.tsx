@@ -44,16 +44,16 @@ export default function AboutPage() {
                 </div>
 
                 <div className="container-custom relative z-10 text-center space-y-8">
-                    <span className="inline-block px-6 py-2 bg-primary/20 backdrop-blur-md text-primary border border-primary/30 rounded-full text-[10px]  tracking-[0.4em]  shadow-luxe">
+                    <span className="inline-block px-6 py-2 bg-primary/20 backdrop-blur-md text-primary border border-primary/30 rounded-full text-[10px]    shadow-luxe">
                         Our Architectural Narrative
                     </span>
-                    <h1 className="text-6xl md:text-8xl  text-white leading-tight font-display tracking-tighter">
+                    <h1 className="text-6xl md:text-8xl  text-white leading-tight font-display ">
                         Illuminating <br />
                         <span className="text-primary italic">Atmospheres</span>
                     </h1>
                     <div className="flex items-center justify-center gap-6 pt-8">
                         <div className="h-px w-16 bg-white/20"></div>
-                        <p className="text-white/60  text-[10px]  tracking-[0.5em]">Curating Excellence Since 2021</p>
+                        <p className="text-white/60  text-[10px]  ">Curating Excellence Since 2021</p>
                         <div className="h-px w-16 bg-white/20"></div>
                     </div>
                 </div>
@@ -82,8 +82,8 @@ export default function AboutPage() {
 
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <span className="text-primary  text-[10px]  tracking-[0.3em]">The Gsons Studio</span>
-                                <h2 className="text-5xl  text-slate-900 font-display tracking-tight leading-none">
+                                <span className="text-primary  text-[10px]  ">The Gsons Studio</span>
+                                <h2 className="text-5xl  text-slate-900 font-display  leading-none">
                                     Crafting Light with <br />Architectural Precision.
                                 </h2>
                             </div>
@@ -98,11 +98,11 @@ export default function AboutPage() {
                                 <div className="pt-8 grid grid-cols-2 gap-8">
                                     <div>
                                         <h4 className="text-3xl  text-slate-900 font-display">3+</h4>
-                                        <p className="text-[10px]   tracking-widest text-slate-400">Years of Mastery</p>
+                                        <p className="text-[10px]    text-slate-400">Years of Mastery</p>
                                     </div>
                                     <div>
                                         <h4 className="text-3xl  text-slate-900 font-display">500+</h4>
-                                        <p className="text-[10px]   tracking-widest text-slate-400">Projects Illuminated</p>
+                                        <p className="text-[10px]    text-slate-400">Projects Illuminated</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,8 +140,8 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <h3 className="text-3xl  text-slate-900 font-display  tracking-tight">{leader.name}</h3>
-                                    <span className="text-[10px]  text-primary  tracking-[0.3em] block">{leader.role}</span>
+                                    <h3 className="text-3xl  text-slate-900 font-display  ">{leader.name}</h3>
+                                    <span className="text-[10px]  text-primary   block">{leader.role}</span>
                                     <p className="text-slate-500 font-medium leading-relaxed max-w-md pt-4">{leader.bio}</p>
                                 </div>
                             </div>
@@ -159,8 +159,8 @@ export default function AboutPage() {
                                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
                                     {m.icon}
                                 </div>
-                                <h3 className="text-xl  mb-4 text-slate-900 font-display  tracking-tight">{m.title}</h3>
-                                <p className="text-slate-400 text-xs leading-relaxed font-bold  tracking-widest">{m.desc}</p>
+                                <h3 className="text-xl  mb-4 text-slate-900 font-display  ">{m.title}</h3>
+                                <p className="text-slate-400 text-xs leading-relaxed font-semibold  ">{m.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 </div>
                 <div className="container-custom relative z-10">
                     <div className="max-w-3xl space-y-12">
-                        <h2 className="text-5xl md:text-7xl  text-white font-display tracking-tighter leading-none">
+                        <h2 className="text-5xl md:text-7xl  text-white font-display  leading-none">
                             The Journey to <br />
                             <span className="text-primary italic">Light Continues.</span>
                         </h2>
@@ -186,11 +186,11 @@ export default function AboutPage() {
                             Whether you are reimagining a private residence or curating a commercial environment, our architectural advisors are ready to assist.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 pt-8">
-                            <Link href="/products" className="group bg-primary text-white px-12 py-6 rounded-2xl  text-xs  tracking-widest hover:bg-white hover:text-slate-900 transition-all shadow-luxe flex items-center justify-center gap-4">
+                            <Link href="/products" className="group bg-primary text-white px-12 py-6 rounded-2xl  text-xs   hover:bg-white hover:text-slate-900 transition-all shadow-luxe flex items-center justify-center gap-4">
                                 Explore Collection
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                             </Link>
-                            <Link href="/contact" className="bg-white/10 text-white px-12 py-6 rounded-2xl  text-xs  tracking-widest border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center">
+                            <Link href="/contact" className="bg-white/10 text-white px-12 py-6 rounded-2xl  text-xs   border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center">
                                 Initialize Inquiry
                             </Link>
                         </div>

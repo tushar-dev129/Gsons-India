@@ -41,10 +41,10 @@ export default function FeaturesSection() {
                                 {feature.icon}
                             </div>
                             <div className="space-y-4">
-                                <h3 className="text-base  text-slate-900 font-display  tracking-tight">
+                                <h3 className="text-base  text-slate-900 font-display  ">
                                     {feature.title}
                                 </h3>
-                                <p className="text-slate-400 text-[13px]   tracking-widest leading-loose">
+                                <p className="text-slate-400 text-[13px]    leading-loose">
                                     {feature.desc}
                                 </p>
                             </div>

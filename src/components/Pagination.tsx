@@ -15,7 +15,7 @@ export default function Pagination({ page, totalPages, onChange }: PaginationPro
             <button 
                 onClick={() => onChange(page - 1)} 
                 disabled={page === 1}
-                className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-bold text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-all"
+                className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-all"
             >
                 ← Prev
             </button>
@@ -26,7 +26,7 @@ export default function Pagination({ page, totalPages, onChange }: PaginationPro
                         <button 
                             key={p} 
                             onClick={() => onChange(p)}
-                            className={`w-10 h-10 rounded-xl text-sm font-bold transition-all ${
+                            className={`w-10 h-10 rounded-xl text-sm font-semibold transition-all ${
                                 page === p 
                                     ? "bg-gray-900 text-white" 
                                     : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50"
@@ -42,7 +42,7 @@ export default function Pagination({ page, totalPages, onChange }: PaginationPro
             <button 
                 onClick={() => onChange(page + 1)} 
                 disabled={page === totalPages}
-                className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-bold text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-all"
+                className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-semibold text-gray-700 disabled:opacity-40 hover:bg-gray-50 transition-all"
             >
                 Next →
             </button>

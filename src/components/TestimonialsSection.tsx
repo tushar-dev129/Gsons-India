@@ -55,9 +55,9 @@ export default function TestimonialsSection() {
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6">
                         <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                        <span className="text-[10px]   tracking-[0.3em] text-white/70">Voices of Vision</span>
+                        <span className="text-[10px]    text-white/70">Voices of Vision</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl  text-white tracking-tighter mb-6 font-display">
+                    <h2 className="text-4xl md:text-5xl  text-white  mb-6 font-display">
                         Architectural <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-orange-400">Praise.</span>
                     </h2>
                 </div>
@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
                                 </div>
                             </div>
 
-                            <p className="text-white/80 font-medium italic mb-10 grow leading-relaxed text-[13px] tracking-tight relative z-10">
+                            <p className="text-white/80 font-medium italic mb-10 grow leading-relaxed text-[13px]  relative z-10">
                                 "{testimonial.content}"
                             </p>
 
@@ -96,8 +96,8 @@ export default function TestimonialsSection() {
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <h4 className=" text-white text-sm font-display  tracking-tight">{testimonial.name}</h4>
-                                    <p className="text-[10px]  text-primary  tracking-[0.2em] leading-none opacity-80">{testimonial.role}</p>
+                                    <h4 className=" text-white text-sm font-display  ">{testimonial.name}</h4>
+                                    <p className="text-[10px]  text-primary   leading-none opacity-80">{testimonial.role}</p>
                                 </div>
                             </div>
                         </div>

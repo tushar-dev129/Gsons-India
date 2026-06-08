@@ -47,7 +47,7 @@ export default function AdminDashboard() {
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
             <div>
-                <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Dashboard Overview</h1>
+                <h1 className="text-3xl font-semibold text-gray-900 ">Dashboard Overview</h1>
                 <p className="text-gray-500 mt-2">Real-time performance and inventory insights.</p>
             </div>
 
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
                         <div className="flex items-center justify-between">
                             <div>
                                 <p className="text-sm font-medium text-gray-500">{stat.name}</p>
-                                <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value.toLocaleString()}</p>
+                                <p className="text-3xl font-semibold text-gray-900 mt-1">{stat.value.toLocaleString()}</p>
                             </div>
                             <div className={`${stat.bgColor} ${stat.color} p-3 rounded-xl`}>
                                 <stat.icon size={24} />
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
                     <div className="p-6 border-b border-gray-50 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <Clock className="text-blue-500" size={20} />
-                            <h2 className="text-xl font-bold text-gray-900">Latest Products</h2>
+                            <h2 className="text-xl font-semibold text-gray-900">Latest Products</h2>
                         </div>
                         <Link href="/admin/products" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
                             View All <ArrowUpRight size={14} />
@@ -84,9 +84,9 @@ export default function AdminDashboard() {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50/50">
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Product</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Category</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Added</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Product</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Category</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Added</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
@@ -129,9 +129,9 @@ export default function AdminDashboard() {
                     <div className="p-6 border-b border-gray-50 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <AlertTriangle className="text-orange-500" size={20} />
-                            <h2 className="text-xl font-bold text-gray-900">Low Stock Alert</h2>
+                            <h2 className="text-xl font-semibold text-gray-900">Low Stock Alert</h2>
                         </div>
-                        <span className="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-md  tracking-wide">
+                        <span className="text-xs font-semibold text-orange-600 bg-orange-50 px-2 py-1 rounded-md  ">
                             Top 5 Critical
                         </span>
                     </div>
@@ -139,9 +139,9 @@ export default function AdminDashboard() {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50/50">
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Product Variant</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Stock</th>
-                                    <th className="px-6 py-4 text-xs font-bold text-gray-500  tracking-wider">Status</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Product Variant</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Stock</th>
+                                    <th className="px-6 py-4 text-xs font-semibold text-gray-500  ">Status</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-50">
@@ -154,7 +154,7 @@ export default function AdminDashboard() {
                                             </div>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className={`font-bold ${variant.stock <= 5 ? 'text-red-600' : 'text-orange-600'}`}>
+                                            <span className={`font-semibold ${variant.stock <= 5 ? 'text-red-600' : 'text-orange-600'}`}>
                                                 {variant.stock} units
                                             </span>
                                         </td>
@@ -180,35 +180,35 @@ export default function AdminDashboard() {
             {/* Quick Actions & System */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-8">
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                    <h2 className="text-xl font-bold text-gray-900 mb-6 font-primary">Quick Actions</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-6 font-primary">Quick Actions</h2>
                     <div className="grid grid-cols-2 gap-4">
                         <Link href="/admin/products/new" className="flex flex-col items-center justify-center p-6 rounded-2xl border border-orange-100 bg-orange-50/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 group shadow-sm">
                             <Package className="mb-3 group-hover:scale-110 transition-transform" />
-                            <span className="font-bold">Add Product</span>
+                            <span className="font-semibold">Add Product</span>
                         </Link>
                         <Link href="/admin/posts/new" className="flex flex-col items-center justify-center p-6 rounded-2xl border border-blue-100 bg-blue-50/50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 group shadow-sm">
                             <FileText className="mb-3 group-hover:scale-110 transition-transform" />
-                            <span className="font-bold">New Post</span>
+                            <span className="font-semibold">New Post</span>
                         </Link>
                     </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                    <h2 className="text-xl font-bold text-gray-900 mb-6">System Health</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-6">System Health</h2>
                     <div className="space-y-4">
                         <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50/50">
                             <div className="flex items-center gap-3">
                                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                                 <span className="text-sm font-medium text-gray-700">Database Core</span>
                             </div>
-                            <span className="text-xs font-bold text-green-700  tracking-tight">Active</span>
+                            <span className="text-xs font-semibold text-green-700  ">Active</span>
                         </div>
                         <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50/50">
                             <div className="flex items-center gap-3">
                                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                                 <span className="text-sm font-medium text-gray-700">Digital Assets</span>
                             </div>
-                            <span className="text-xs font-bold text-green-700  tracking-tight">Active</span>
+                            <span className="text-xs font-semibold text-green-700  ">Active</span>
                         </div>
                     </div>
                 </div>

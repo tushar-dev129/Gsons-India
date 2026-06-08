@@ -17,7 +17,8 @@ import {
     Settings,
     ChevronUp,
     Images,
-    UploadCloud
+    UploadCloud,
+    Inbox
 } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useAuth } from "@/context/AuthContext";
@@ -28,6 +29,7 @@ const menuItems = [
     { name: "Products", href: "/admin/products", icon: Package },
     { name: "Categories", href: "/admin/categories", icon: Grid },
     { name: "Users", href: "/admin/users", icon: Users },
+    { name: "Inquiries", href: "/admin/inquiries", icon: Inbox },
     { name: "Posts", href: "/admin/posts", icon: FileText },
     { name: "Gallery", href: "/admin/gallery", icon: Images },
     { name: "Bulk Import", href: "/admin/products/bulk", icon: UploadCloud },
@@ -103,7 +105,7 @@ export default function AdminSidebar() {
                     </div>
                     {/* {!isCollapsed && (
                         <div className="flex flex-col animate-in fade-in slide-in-from-left-4 duration-500">
-                             <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mt-1">LUMINARIES</span>
+                             <span className="text-[10px] font-semibold text-primary   mt-1">LUMINARIES</span>
                         </div>
                     )} */}
                 </Link>
@@ -195,12 +197,12 @@ export default function AdminSidebar() {
                         isUserMenuOpen ? "bg-gray-50 ring-1 ring-orange-100" : ""
                     )}
                 >
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold flex-shrink-0">
                         {user?.name?.[0]?.toUpperCase() || "A"}
                     </div>
                     {!isCollapsed && (
                         <div className="flex-1 text-left min-w-0">
-                            <p className="text-sm font-bold text-gray-900 truncate">{user?.name || "Admin"}</p>
+                            <p className="text-sm font-semibold text-gray-900 truncate">{user?.name || "Admin"}</p>
                             <p className="text-xs text-gray-500 truncate">{user?.email || "gsons@admin.com"}</p>
                         </div>
                     )}

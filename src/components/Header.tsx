@@ -72,7 +72,7 @@ const Header = () => {
                                         strokeWidth={1.5}
                                     />
                                 </div>
-                                <span className="text-[10px] font-bold text-slate-700 group-hover:text-primary transition-colors whitespace-nowrap uppercase tracking-tight">
+                                <span className="text-[10px] font-semibold text-slate-700 group-hover:text-primary transition-colors whitespace-nowrap  ">
                                     {category.name}
                                 </span>
                             </Link>

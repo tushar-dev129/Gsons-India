@@ -117,7 +117,7 @@ export default function NewVariantPage() {
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900">Add New Variant</h1>
+                    <h1 className="text-3xl font-semibold text-gray-900">Add New Variant</h1>
                     <p className="text-gray-500 mt-2">Add a specific version (size, color, etc.) of your product.</p>
                 </div>
                 <button
@@ -132,7 +132,7 @@ export default function NewVariantPage() {
                 <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">SKU (Unique Code)</label>
+                            <label className="text-sm font-semibold text-gray-900">SKU (Unique Code)</label>
                             <input
                                 type="text"
                                 name="sku"
@@ -153,14 +153,14 @@ export default function NewVariantPage() {
                                     onChange={(e) => setFormData(prev => ({ ...prev, isActive: e.target.checked }))}
                                     className="w-4 h-4 text-primary focus:ring-primary border-gray-300 rounded"
                                 />
-                                <label htmlFor="isActive" className="text-sm font-bold text-gray-900 cursor-pointer">Active</label>
+                                <label htmlFor="isActive" className="text-sm font-semibold text-gray-900 cursor-pointer">Active</label>
                             </div>
                         </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Price (₹)</label>
+                            <label className="text-sm font-semibold text-gray-900">Price (₹)</label>
                             <input
                                 type="number"
                                 name="price"
@@ -172,7 +172,7 @@ export default function NewVariantPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-gray-900">Stock Status</label>
+                            <label className="text-sm font-semibold text-gray-900">Stock Status</label>
                             <input
                                 type="number"
                                 name="stock"
@@ -187,7 +187,7 @@ export default function NewVariantPage() {
 
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <label className="text-sm font-bold text-gray-900">Attributes (Color, Material, etc.)</label>
+                            <label className="text-sm font-semibold text-gray-900">Attributes (Color, Material, etc.)</label>
                             <Button
                                 variant="ghost"
                                 type="button"
@@ -230,7 +230,7 @@ export default function NewVariantPage() {
                     </div>
 
                     <div className="pt-4">
-                        <label className="text-sm font-bold text-gray-900 block mb-2">Variant Images</label>
+                        <label className="text-sm font-semibold text-gray-900 block mb-2">Variant Images</label>
                         <div
                             onClick={() => fileInputRef.current?.click()}
                             className="border-2 min-h-[160px] border-dashed border-gray-200 rounded-3xl p-8 text-center hover:border-primary transition-colors cursor-pointer group"
@@ -247,7 +247,7 @@ export default function NewVariantPage() {
                                 <div className="w-12 h-12 bg-orange-100 text-primary rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
                                     <Upload className="w-6 h-6" />
                                 </div>
-                                <p className="font-bold text-gray-900 text-sm">Click to upload variant images</p>
+                                <p className="font-semibold text-gray-900 text-sm">Click to upload variant images</p>
                                 <p className="text-xs text-gray-500 mt-1">PNG, JPG or WEBP up to 5MB</p>
                             </div>
                         </div>
@@ -265,7 +265,7 @@ export default function NewVariantPage() {
                                         ) : (
                                             <img src={previewUrl} alt="preview" className="w-full h-full object-cover" />
                                         )}
-                                        <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-gray-500 text-[10px] text-white font-bold rounded-md shadow-sm uppercase">File</div>
+                                        <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-gray-500 text-[10px] text-white font-semibold rounded-md shadow-sm ">File</div>
                                         <button
                                             type="button"
                                             onClick={(e) => { e.stopPropagation(); removeImage(i); }}
@@ -286,7 +286,7 @@ export default function NewVariantPage() {
                                         ) : (
                                             <img src={img.url} alt="Gallery" className="w-full h-full object-cover" />
                                         )}
-                                        <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-bold rounded-md shadow-sm uppercase">Gallery</div>
+                                        <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-[10px] text-white font-semibold rounded-md shadow-sm ">Gallery</div>
                                         <button
                                             type="button"
                                             onClick={(e) => { e.stopPropagation(); removeGalleryImage(img._id); }}
@@ -304,7 +304,7 @@ export default function NewVariantPage() {
                                     className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-primary/20 rounded-2xl hover:bg-orange-50 transition-all p-4 text-primary group"
                                 >
                                     <ImageIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                                    <span className="text-[10px] font-bold uppercase tracking-tight">Gallery</span>
+                                    <span className="text-[10px] font-semibold  ">Gallery</span>
                                 </button>
                             </div>
                         )}

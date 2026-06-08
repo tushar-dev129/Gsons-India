@@ -214,7 +214,7 @@ export default function GalleryPage() {
                     <div className="flex items-center gap-2 mb-2">
                         <h1 
                             className={cn(
-                                "text-3xl font-bold text-gray-900 tracking-tight cursor-pointer hover:text-primary transition-colors",
+                                "text-3xl font-semibold text-gray-900  cursor-pointer hover:text-primary transition-colors",
                                 selectedFolder && "text-gray-400 text-xl font-semibold"
                             )}
                             onClick={() => setSelectedFolder(null)}
@@ -224,7 +224,7 @@ export default function GalleryPage() {
                         {selectedFolder && (
                             <>
                                 <ChevronRight className="w-5 h-5 text-gray-300" />
-                                <h1 className="text-3xl font-bold text-gray-900 tracking-tight">{selectedFolder.name}</h1>
+                                <h1 className="text-3xl font-semibold text-gray-900 ">{selectedFolder.name}</h1>
                             </>
                         )}
                     </div>
@@ -320,14 +320,14 @@ export default function GalleryPage() {
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
                     <div className="bg-white w-full max-w-md rounded-3xl p-8 shadow-2xl animate-in zoom-in-95 duration-300">
                         <div className="flex items-center justify-between mb-6">
-                            <h3 className="text-xl font-bold text-gray-900">Create New Folder</h3>
+                            <h3 className="text-xl font-semibold text-gray-900">Create New Folder</h3>
                             <button onClick={() => setIsCreatingFolder(false)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                                 <X className="w-5 h-5 text-gray-400" />
                             </button>
                         </div>
                         <form onSubmit={handleCreateFolder} className="space-y-6">
                             <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Folder Name</label>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Folder Name</label>
                                 <input
                                     type="text"
                                     value={newFolderName}
@@ -365,7 +365,7 @@ export default function GalleryPage() {
                 <div className="bg-white p-6 rounded-3xl border-2 border-dashed border-primary/20 animate-in zoom-in-95 duration-300 shadow-xl shadow-primary/5">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center justify-between">
-                            <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                            <h3 className="font-semibold text-gray-900 flex items-center gap-2">
                                 <ImageIcon className="w-5 h-5 text-primary" />
                                 Batch Preview ({selectedFiles.length} images)
                             </h3>
@@ -409,8 +409,8 @@ export default function GalleryPage() {
                                             <Folder className="w-8 h-8 text-primary/40 group-hover:text-primary transition-colors" />
                                         </div>
                                         <div>
-                                            <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{folder.name}</h3>
-                                            <p className="text-xs text-gray-400 mt-1 uppercase font-bold tracking-widest">
+                                            <h3 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">{folder.name}</h3>
+                                            <p className="text-xs text-gray-400 mt-1  font-semibold ">
                                                 {new Date(folder.createdAt).toLocaleDateString()}
                                             </p>
                                         </div>
@@ -438,7 +438,7 @@ export default function GalleryPage() {
                                 <Folder className="w-10 h-10 text-stone-200" />
                             </div>
                             <div className="space-y-2">
-                                <h3 className="text-xl font-bold text-gray-900">Archive is empty</h3>
+                                <h3 className="text-xl font-semibold text-gray-900">Archive is empty</h3>
                                 <p className="text-gray-400 max-w-xs mx-auto">Create your first folder to start organizing architectural assets.</p>
                             </div>
                             <Button
@@ -527,10 +527,10 @@ export default function GalleryPage() {
                                             )}
                                         </div>
                                         <div className="p-3 border-t border-stone-100 bg-white flex items-center justify-between">
-                                            <span className="text-[10px] font-mono font-bold text-stone-400 truncate max-w-[100px]">
+                                            <span className="text-[10px] font-mono font-semibold text-stone-400 truncate max-w-[100px]">
                                                 {item.public_id.split('/').pop()}
                                             </span>
-                                            <span className="text-[9px] font-bold text-stone-300 uppercase tracking-tighter">
+                                            <span className="text-[9px] font-semibold text-stone-300  ">
                                                 {new Date(item.createdAt).toLocaleDateString()}
                                             </span>
                                         </div>
@@ -544,7 +544,7 @@ export default function GalleryPage() {
                                 <ImageIcon className="w-10 h-10 text-stone-200" />
                             </div>
                             <div className="space-y-2">
-                                <h3 className="text-xl font-bold text-gray-900">Folder is empty</h3>
+                                <h3 className="text-xl font-semibold text-gray-900">Folder is empty</h3>
                                 <p className="text-gray-400 max-w-xs mx-auto">Upload assets into this category to organize your library.</p>
                             </div>
                             <Button

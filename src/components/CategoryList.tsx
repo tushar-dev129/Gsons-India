@@ -33,7 +33,7 @@ export default function CategoryList() {
         <section className="py-24 bg-white">
             <div className="container-custom">
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl  text-slate-900 tracking-tight font-display">
+                    <h2 className="text-4xl md:text-5xl  text-slate-900  font-display">
                         Choose Your Category
                     </h2>
                     <p className="text-slate-400 text-[13px] font-medium italic">Explore our curated collection of professional lighting solutions</p>

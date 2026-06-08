@@ -12,7 +12,7 @@ export default function SectionHeading({ title }: SectionHeadingProps) {
             </div>
 
             <div className="flex items-center gap-3">
-                <h2 className="text-4xl md:text-5xl  text-slate-900 tracking-tighter font-display ">
+                <h2 className="text-4xl md:text-5xl  text-slate-900  font-display ">
                     {title}
                 </h2>
                 <div className="w-2.5 h-2.5 rounded-full bg-primary shadow-luxe shadow-orange-500/20"></div>

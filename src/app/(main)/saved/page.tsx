@@ -108,7 +108,7 @@ export default function SavedPage() {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAF9F6]">
                 <div className="w-12 h-12 border-4 border-slate-100 border-t-primary rounded-full animate-spin"></div>
-                <p className="text-[10px]  text-slate-400  tracking-[0.3em] mt-6">Retrieving Archive</p>
+                <p className="text-[10px]  text-slate-400   mt-6">Retrieving Archive</p>
             </div>
         );
     }
@@ -128,7 +128,7 @@ export default function SavedPage() {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-4xl  text-slate-900 font-display tracking-tight ">Access Restricted</h3>
+                            <h3 className="text-4xl  text-slate-900 font-display  ">Access Restricted</h3>
                             <p className="text-slate-500 text-lg font-medium leading-relaxed">
                                 Curate your personal architectural archive. Authenticate your profile to preserve and manage your favorite selections across devices.
                             </p>
@@ -137,14 +137,14 @@ export default function SavedPage() {
                         <div className="flex flex-col sm:flex-row gap-6 pt-8">
                             <Link
                                 href="/auth/login"
-                                className="bg-slate-900 text-white px-12 py-6 rounded-2xl  text-xs  tracking-widest hover:bg-primary transition-all shadow-luxe-lg flex items-center gap-4 group"
+                                className="bg-slate-900 text-white px-12 py-6 rounded-2xl  text-xs   hover:bg-primary transition-all shadow-luxe-lg flex items-center gap-4 group"
                             >
                                 Verify Identity
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                             </Link>
                             <Link
                                 href="/products"
-                                className="bg-white text-slate-900 px-12 py-6 rounded-2xl  text-xs  tracking-widest border border-slate-100 hover:border-primary transition-all shadow-luxe"
+                                className="bg-white text-slate-900 px-12 py-6 rounded-2xl  text-xs   border border-slate-100 hover:border-primary transition-all shadow-luxe"
                             >
                                 Explore Gallery
                             </Link>
@@ -168,7 +168,7 @@ export default function SavedPage() {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-4xl  text-slate-900 font-display tracking-tight ">Empty Dossier</h3>
+                            <h3 className="text-4xl  text-slate-900 font-display  ">No Products</h3>
                             <p className="text-slate-500 text-lg font-medium leading-relaxed">
                                 Your personal architectural workspace is currently silent. Explore the main collection to archive pieces for your upcoming projects.
                             </p>
@@ -176,7 +176,7 @@ export default function SavedPage() {
 
                         <Link
                             href="/products"
-                            className="bg-primary text-white px-12 py-6 rounded-2xl  text-xs  tracking-widest hover:bg-slate-900 transition-all shadow-luxe-lg flex items-center gap-4 group"
+                            className="bg-primary text-white px-8 py-4 font-semibold rounded-2xl  text-sm   hover:bg-slate-900 transition-all shadow-luxe-lg flex items-center gap-4 group"
                         >
                             Explore Global Collection
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
@@ -186,7 +186,7 @@ export default function SavedPage() {
                     <>
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                             <div>
-                                <h1 className="text-3xl font-display text-slate-900 tracking-tight mb-2">Saved Archive</h1>
+                                <h1 className="text-3xl font-display text-slate-900  mb-2">Saved Archive</h1>
                                 <p className="text-slate-500 text-sm font-medium">Manage and export your curated architectural selections.</p>
                             </div>
 
@@ -198,7 +198,7 @@ export default function SavedPage() {
                                     <div className="w-8 h-8 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                         <Download className="w-4 h-4" />
                                     </div>
-                                    <span className="text-[12px] font-bold tracking-widest text-slate-700 uppercase">Export Archive</span>
+                                    <span className="text-[12px] font-semibold  text-slate-700 ">Export Archive</span>
                                     <ChevronDown className={cn("w-4 h-4 text-slate-400 transition-transform duration-300", isExportOpen && "rotate-180")} />
                                 </button>
 
@@ -211,21 +211,21 @@ export default function SavedPage() {
                                         <div className="absolute right-0 mt-3 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 z-50 ring-1 ring-black/5 animate-in fade-in zoom-in-95 duration-200">
                                             <button
                                                 onClick={() => handleExport('csv')}
-                                                className="w-full flex items-center px-5 py-3.5 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group"
+                                                className="w-full flex items-center px-5 py-3.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group"
                                             >
                                                 <Archive className="w-4 h-4 mr-4 opacity-50 group-hover:opacity-100 group-hover:text-primary" />
                                                 Export CSV
                                             </button>
                                             <button
                                                 onClick={() => handleExport('excel')}
-                                                className="w-full flex items-center px-5 py-3.5 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group border-t border-slate-50"
+                                                className="w-full flex items-center px-5 py-3.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group border-t border-slate-50"
                                             >
                                                 <FileSpreadsheet className="w-4 h-4 mr-4 opacity-50 group-hover:opacity-100 group-hover:text-green-600" />
                                                 Export Excel
                                             </button>
                                             <button
                                                 onClick={() => handleExport('pdf')}
-                                                className="w-full flex items-center px-5 py-3.5 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group border-t border-slate-50"
+                                                className="w-full flex items-center px-5 py-3.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors group border-t border-slate-50"
                                             >
                                                 <FileText className="w-4 h-4 mr-4 opacity-50 group-hover:opacity-100 group-hover:text-red-500" />
                                                 Export PDF

@@ -48,7 +48,7 @@ export default function Footer() {
 
                     {/* Quick Access */}
                     <div className="space-y-8">
-                        <h4 className="text-xs   tracking-[0.2em] text-slate-900 border-l-2 border-primary pl-4">Collection</h4>
+                        <h4 className="text-xs    text-slate-900 border-l-2 border-primary pl-4">Collection</h4>
                         <ul className="space-y-4">
                             {displayCategories.map((cat) => (
                                 <li key={cat._id}>
@@ -62,7 +62,7 @@ export default function Footer() {
 
                     {/* Company */}
                     <div className="space-y-8">
-                        <h4 className="text-xs   tracking-[0.2em] text-slate-900 border-l-2 border-primary pl-4">Enterprise</h4>
+                        <h4 className="text-xs    text-slate-900 border-l-2 border-primary pl-4">Enterprise</h4>
                         <ul className="space-y-4">
                             {["Our Story", "Catalogues", "Project Gallery", "Sustainability", "Contact"].map((item) => (
                                 <li key={item}>
@@ -76,7 +76,7 @@ export default function Footer() {
 
                     {/* Newsletter & Contact */}
                     <div className="space-y-8">
-                        <h4 className="text-xs   tracking-[0.2em] text-slate-900 border-l-2 border-primary pl-4">Newsletter</h4>
+                        <h4 className="text-xs    text-slate-900 border-l-2 border-primary pl-4">Newsletter</h4>
                         <div className="space-y-6">
                             <p className="text-sm font-medium text-slate-400 leading-relaxed">
                                 Subscribe to receive professional updates and exclusive exhibition invites.
@@ -96,10 +96,10 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-12 border-t border-slate-200/60 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-[11px] font-bold text-slate-400  tracking-widest">
+                    <div className="text-[11px] font-semibold text-slate-400  ">
                         &copy; {new Date().getFullYear()} Gsons India. Mastercrafted in Delhi.
                     </div>
-                    <div className="flex gap-8 text-[11px]  text-slate-400  tracking-widest">
+                    <div className="flex gap-8 text-[11px]  text-slate-400  ">
                         <Link href="#" className="hover:text-slate-900 transition-colors">Privacy Privacy</Link>
                         <Link href="#" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
                         <Link href="#" className="hover:text-slate-900 transition-colors">Cookie Policy</Link>

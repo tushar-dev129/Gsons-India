@@ -64,10 +64,10 @@ export default function ContactPage() {
                     {/* Left: Brand Narrative & Info */}
                     <div className="space-y-12">
                         <div className="space-y-6">
-                            <span className="inline-block px-4 py-1.5 bg-slate-900/5 text-[9px]   tracking-[0.4em] text-slate-400 border border-slate-900/10 rounded-full">
+                            <span className="inline-block px-4 py-1.5 bg-slate-900/5 text-[9px]    text-slate-400 border border-slate-900/10 rounded-full">
                                 Concierge Inquiry
                             </span>
-                            <h1 className="text-4xl md:text-5xl  text-slate-900 leading-none font-display tracking-tighter">
+                            <h1 className="text-4xl md:text-5xl  text-slate-900 leading-none font-display ">
                                 Begin the <br />
                                 <span className="text-primary italic">Dialogue.</span>
                             </h1>
@@ -86,9 +86,9 @@ export default function ContactPage() {
                                     <div className="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                                         {info.icon}
                                     </div>
-                                    <h4 className="text-[10px]   tracking-[0.3em] text-slate-900 mb-1">{info.title}</h4>
+                                    <h4 className="text-[10px]    text-slate-900 mb-1">{info.title}</h4>
                                     <p className="text-sm  text-slate-900 truncate">{info.details}</p>
-                                    <p className="text-[9px]   tracking-widest text-slate-400 mt-2">{info.desc}</p>
+                                    <p className="text-[9px]    text-slate-400 mt-2">{info.desc}</p>
                                 </a>
                             ))}
 
@@ -102,9 +102,9 @@ export default function ContactPage() {
                                 <div className="w-12 h-12 bg-white/20 text-white rounded-2xl flex items-center justify-center mb-6">
                                     <MessageSquareText className="w-6 h-6" />
                                 </div>
-                                <h4 className="text-[10px]   tracking-[0.3em] text-white/70 mb-1">Instant Liaison</h4>
-                                <p className="text-sm font-bold opacity-100">WhatsApp Priority</p>
-                                <span className="inline-flex items-center gap-2 text-[9px]   tracking-widest text-white mt-4 group-hover:gap-4 transition-all">
+                                <h4 className="text-[10px]    text-white/70 mb-1">Instant Liaison</h4>
+                                <p className="text-sm font-semibold opacity-100">WhatsApp Priority</p>
+                                <span className="inline-flex items-center gap-2 text-[9px]    text-white mt-4 group-hover:gap-4 transition-all">
                                     Initialize Chat <Send className="w-3 h-3" />
                                 </span>
                             </a>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                                 <ShieldCheck className="w-8 h-8" />
                             </div>
                             <div>
-                                <h4 className="text-[10px]   tracking-[0.3em] text-slate-900">Professional Verification</h4>
+                                <h4 className="text-[10px]    text-slate-900">Professional Verification</h4>
                                 <p className="text-xs text-slate-500 font-medium">All technical inquiries are handled by our certified lighting engineers.</p>
                             </div>
                         </div>
@@ -126,13 +126,13 @@ export default function ContactPage() {
                         <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 opacity-0 group-hover:opacity-40 transition-opacity duration-1000"></div>
                         <div className="bg-white p-10 md:p-12 rounded-4xl border border-slate-100 shadow-luxe-lg sticky top-32">
                             <div className="mb-8">
-                                <h3 className="text-2xl  text-slate-900 font-display  tracking-tight">Technical Inquiry</h3>
-                                <p className="text-slate-400 text-[10px]   tracking-[0.3em] mt-2"> Initialization</p>
+                                <h3 className="text-2xl  text-slate-900 font-display  ">Technical Inquiry</h3>
+                                <p className="text-slate-400 text-[10px]    mt-2"> Initialization</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-8">
                                 <div className="space-y-2">
-                                    <label className="block text-[10px]   tracking-[0.2em] text-slate-400 ml-1">Full Name</label>
+                                    <label className="block text-[10px]    text-slate-400 ml-1">Full Name</label>
                                     <input
                                         type="text"
                                         name="name"
@@ -140,11 +140,11 @@ export default function ContactPage() {
                                         onChange={handleChange}
                                         placeholder="Identification"
                                         required
-                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs  tracking-widest text-slate-900 placeholder:text-slate-200"
+                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs   text-slate-900 placeholder:text-slate-200"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="block text-[10px]   tracking-[0.2em] text-slate-400 ml-1">Email Coordinates</label>
+                                    <label className="block text-[10px]    text-slate-400 ml-1">Email Coordinates</label>
                                     <input
                                         type="email"
                                         name="email"
@@ -152,11 +152,11 @@ export default function ContactPage() {
                                         onChange={handleChange}
                                         placeholder="Digital Address"
                                         required
-                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs  tracking-widest text-slate-900 placeholder:text-slate-200"
+                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs   text-slate-900 placeholder:text-slate-200"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="block text-[10px]   tracking-[0.2em] text-slate-400 ml-1">Inquiry Narrative</label>
+                                    <label className="block text-[10px]    text-slate-400 ml-1">Inquiry Narrative</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
@@ -164,7 +164,7 @@ export default function ContactPage() {
                                         placeholder="Detail your architectural requirements..."
                                         rows={5}
                                         required
-                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs  tracking-widest text-slate-900 placeholder:text-slate-200 resize-none"
+                                        className="w-full bg-slate-50 border border-slate-100 p-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all  text-xs   text-slate-900 placeholder:text-slate-200 resize-none"
                                     ></textarea>
                                 </div>
 

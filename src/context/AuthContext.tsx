@@ -11,6 +11,9 @@ interface User {
     name: string;
     email: string;
     role: string;
+    phone?: string;
+    mobile?: string;
+    company?: string;
     avatar?: {
         url: string;
     };

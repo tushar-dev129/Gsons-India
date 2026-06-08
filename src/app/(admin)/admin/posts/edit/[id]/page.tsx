@@ -105,7 +105,7 @@ export default function EditPostPage() {
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-gray-900">Edit Post</h1>
+                    <h1 className="text-3xl font-semibold text-gray-900">Edit Post</h1>
                     <p className="text-gray-500 mt-2">Update your article content and settings.</p>
                 </div>
                 <Button
@@ -122,7 +122,7 @@ export default function EditPostPage() {
                     <div className="lg:col-span-2 space-y-6">
                         <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-gray-900  tracking-wider">Post Title</label>
+                                <label className="text-sm font-semibold text-gray-900  ">Post Title</label>
                                 <input
                                     type="text"
                                     name="title"
@@ -135,7 +135,7 @@ export default function EditPostPage() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-gray-900  tracking-wider">Excerpt</label>
+                                <label className="text-sm font-semibold text-gray-900  ">Excerpt</label>
                                 <textarea
                                     name="excerpt"
                                     value={formData.excerpt}
@@ -147,7 +147,7 @@ export default function EditPostPage() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-gray-900  tracking-wider">Content</label>
+                                <label className="text-sm font-semibold text-gray-900  ">Content</label>
                                 <textarea
                                     name="content"
                                     value={formData.content}
@@ -164,10 +164,10 @@ export default function EditPostPage() {
                     {/* Sidebar Settings */}
                     <div className="space-y-6">
                         <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-6">
-                            <h3 className="font-bold text-gray-900 border-b border-gray-50 pb-4">Publish Settings</h3>
+                            <h3 className="font-semibold text-gray-900 border-b border-gray-50 pb-4">Publish Settings</h3>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-700 ">Status</label>
+                                <label className="text-xs font-semibold text-gray-700 ">Status</label>
                                 <select
                                     name="status"
                                     value={formData.status}
@@ -181,7 +181,7 @@ export default function EditPostPage() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-700 ">Category</label>
+                                <label className="text-xs font-semibold text-gray-700 ">Category</label>
                                 <select
                                     name="category"
                                     value={formData.category}
@@ -215,7 +215,7 @@ export default function EditPostPage() {
                         </div>
 
                         <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
-                            <h3 className="font-bold text-gray-900">Featured Image</h3>
+                            <h3 className="font-semibold text-gray-900">Featured Image</h3>
                             <div
                                 onClick={() => fileInputRef.current?.click()}
                                 className="border-2 border-dashed border-gray-100 rounded-2xl p-8 text-center hover:border-primary transition-colors cursor-pointer group overflow-hidden relative min-h-[160px] flex flex-col items-center justify-center"
@@ -241,7 +241,7 @@ export default function EditPostPage() {
                                 ) : (
                                     <>
                                         <Upload className="w-8 h-8 text-gray-500 mx-auto mb-2 group-hover:text-primary transition-colors" />
-                                        <span className="text-xs font-bold text-gray-500 group-hover:text-primary">Click to upload</span>
+                                        <span className="text-xs font-semibold text-gray-500 group-hover:text-primary">Click to upload</span>
                                     </>
                                 )}
                             </div>

@@ -70,11 +70,11 @@ export default function PopularProductsSection() {
                         </div>
 
                         <div className="relative z-10 max-w-md space-y-6">
-                            <span className="text-[10px]   tracking-[0.3em] text-primary">Partner Program</span>
-                            <h3 className="text-4xl md:text-5xl  text-white leading-tight font-display tracking-tighter">
+                            <span className="text-[10px]    text-primary">Partner Program</span>
+                            <h3 className="text-4xl md:text-5xl  text-white leading-tight font-display ">
                                 Engineered For <br /> The Visionary.
                             </h3>
-                            <button className="flex items-center gap-3 text-xs   tracking-widest text-white group/btn transition-colors hover:text-primary">
+                            <button className="flex items-center gap-3 text-xs    text-white group/btn transition-colors hover:text-primary">
                                 Join Architect Network <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-2" />
                             </button>
                         </div>
@@ -89,8 +89,8 @@ export default function PopularProductsSection() {
                         </div>
 
                         <div className="space-y-2 mb-10">
-                            <h4 className="text-xl  text-slate-900 font-display  tracking-tight">The 2024 <br /> Masterpiece</h4>
-                            <p className="text-[10px]  text-primary  tracking-widest">Handmade Precision</p>
+                            <h4 className="text-xl  text-slate-900 font-display  ">The 2024 <br /> Masterpiece</h4>
+                            <p className="text-[10px]  text-primary  ">Handmade Precision</p>
                         </div>
 
                         <div className="relative w-full aspect-square max-w-[200px] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">

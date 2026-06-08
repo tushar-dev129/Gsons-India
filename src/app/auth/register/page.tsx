@@ -54,7 +54,7 @@ export default function RegisterPage() {
                             <circle cx="10" cy="80" r="15" fill="white" />
                         </svg>
                     </div>
-                    <h2 className="text-4xl font-bold mb-6 relative z-10">Join GSONS</h2>
+                    <h2 className="text-4xl font-semibold mb-6 relative z-10">Join GSONS</h2>
                     <p className="text-orange-100 mb-8 relative z-10">
                         Create an account to explore our premium collection and enjoy exclusive benefits.
                     </p>
@@ -71,7 +71,7 @@ export default function RegisterPage() {
                 {/* Right Side: Form */}
                 <div className="md:w-2/3 p-12">
                     <div className="mb-10 text-center md:text-left">
-                        <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
+                        <h1 className="text-3xl font-semibold text-gray-900">Create Account</h1>
                         <p className="text-gray-500 mt-2">Please fill in the details to register</p>
                     </div>
 
@@ -133,7 +133,7 @@ export default function RegisterPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:transform-none"
+                            className="w-full py-4 bg-primary text-white font-semibold rounded-xl shadow-lg hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:transform-none"
                         >
                             {loading ? "Registering..." : "Register Now"}
                         </button>
@@ -141,7 +141,7 @@ export default function RegisterPage() {
 
                     <p className="text-center mt-8 text-gray-600">
                         Already have an account?{" "}
-                        <Link href="/auth/login" className="font-bold text-primary hover:underline">
+                        <Link href="/auth/login" className="font-semibold text-primary hover:underline">
                             Sign In
                         </Link>
                     </p>

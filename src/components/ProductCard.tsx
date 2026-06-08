@@ -3,15 +3,17 @@
 import { Heart, Plus, Star } from "lucide-react";
 import { useSaved } from "@/context/SavedContext";
 import { useAuth } from "@/context/AuthContext";
+import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/utils/formatters";
 import type { Product } from "@/types/product";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function ProductCard({ _id, name, price, images, productId, sku, rating, reviews, isNew, isSale, variantId, attributes }: Product & { productId?: string, sku?: string, rating?: number, reviews?: number, isNew?: boolean, isSale?: boolean, variantId?: string, attributes?: Record<string, any> }) {
+export default function ProductCard({ _id, name, price, images, productId, sku, code, rating, reviews, isNew, isSale, variantId, attributes }: Product & { productId?: string, sku?: string, rating?: number, reviews?: number, isNew?: boolean, isSale?: boolean, variantId?: string, attributes?: Record<string, any> }) {
     const { toggleSave, isSaved } = useSaved();
     const { isAuthenticated } = useAuth();
+    const { addItem } = useCart();
     const router = useRouter();
     const targetId = variantId || productId || _id;
     const saved = isSaved(targetId);
@@ -27,6 +29,26 @@ export default function ProductCard({ _id, name, price, images, productId, sku, 
     };
 
     const imageUrl = images?.[0]?.url || "/logo.png";
+    const productCode = sku || code || "ARCHIVE";
+
+    const handleAddToCart = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!isAuthenticated) {
+            router.push("/auth/login");
+            return;
+        }
+        addItem({
+            id: targetId,
+            productId: productId || _id,
+            variantId,
+            name,
+            code: productCode,
+            price: Number(price || 0),
+            image: imageUrl,
+            attributes: attributes ? Object.fromEntries(Object.entries(attributes).map(([key, value]) => [key, String(value)])) : undefined,
+        });
+    };
 
     return (
         <div className="group relative flex flex-col bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1.5 border border-slate-100 shadow-luxe">
@@ -65,11 +87,11 @@ export default function ProductCard({ _id, name, price, images, productId, sku, 
 
                     {/* Tags */}
                     <div className="flex flex-col gap-1.5">
-                        <span className="px-2 py-0.5 w-fit bg-slate-50 border border-slate-100 rounded-lg text-[8px]   tracking-widest text-slate-500">
-                            {sku || "ARCHIVE"}
+                        <span className="px-2 py-0.5 w-fit bg-slate-50 border border-slate-100 rounded-lg text-[8px]    text-slate-500">
+                            {productCode}
                         </span>
                        
-                            <span className=" py-0.5 w-fit text-[10px] tracking-widest text-primary flex items-center gap-1">
+                            <span className=" py-0.5 w-fit text-[10px]  text-primary flex items-center gap-1">
                                 {[...Array(5)].map((_, i) => (
                                     <Star key={i} className="w-3 h-3 fill-current" />
                                 ))}
@@ -77,14 +99,14 @@ export default function ProductCard({ _id, name, price, images, productId, sku, 
                        
                     </div>
                     <Link href={`/products/${targetId}`} className="block group/title">
-                        <h3 className="text-sm  text-slate-900 tracking-tight line-clamp-1 transition-colors group-hover/title:text-primary">
+                        <h3 className="text-sm  text-slate-900  line-clamp-1 transition-colors group-hover/title:text-primary">
                             {name}
                         </h3>
                     </Link>
 
                     {/* Attributes */}
                     {attributes && Object.values(attributes).length > 0 && (
-                        <p className="text-slate-400 text-[11px] font-bold uppercase tracking-[0.1em] line-clamp-1">
+                        <p className="text-slate-400 text-[11px] font-semibold   line-clamp-1">
                             {Object.values(attributes).map(val => String(val)).join(" | ")}
                         </p>
                     )}
@@ -98,8 +120,15 @@ export default function ProductCard({ _id, name, price, images, productId, sku, 
                 {/* Footer: Price */}
                 <div className="flex items-end justify-between mt-3 border-t border-slate-50 pt-2">
                     <div className="space-y-0.5">
-                        <p className="text-base text-slate-900 tracking-tighter font-bold">{formatPrice(price)}</p>
+                        <p className="text-base text-slate-900  font-semibold">{formatPrice(price)}</p>
                     </div>
+                    <button
+                        onClick={handleAddToCart}
+                        className="h-9 w-9 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95"
+                        title="Add to cart"
+                    >
+                        <Plus className="w-4 h-4" />
+                    </button>
                 </div>
             </div>
         </div>

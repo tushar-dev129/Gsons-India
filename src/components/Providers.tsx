@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ReactNode, useState } from "react";
 import { AuthProvider } from "@/context/AuthContext";
 import { SavedProvider } from "@/context/SavedContext";
+import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "react-hot-toast";
 
 export default function Providers({ children }: { children: ReactNode }) {
@@ -21,7 +22,9 @@ export default function Providers({ children }: { children: ReactNode }) {
         <QueryClientProvider client={queryClient}>
             <AuthProvider>
                 <SavedProvider>
-                    {children}
+                    <CartProvider>
+                        {children}
+                    </CartProvider>
                     <ReactQueryDevtools initialIsOpen={false} />
                     <Toaster position="top-right" reverseOrder={false} />
                 </SavedProvider>
